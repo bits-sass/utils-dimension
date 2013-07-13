@@ -2,6 +2,18 @@
    Dimension utilities
    ========================================================================== */
 
+/**
+ * Variables
+ *
+ * It is recommended to override these.
+ *
+ * 1. Namespace of bits.css's classes.
+ * 2. List of column variations
+ */
+
+$bits-ns: 'bits-' !default; /* 1 */
+$bits-columns: (2 3 4 5 6 8 10 12) !default; /* 2 */
+
 /* Intrinsic widths
    ========================================================================== */
 
@@ -9,14 +21,14 @@
  * Make an element shrink wrap its content.
  */
 
-.u-sizeFit,
-.u-sizeFitAlt {
+.#{$bits-ns}u-sizeFit,
+.#{$bits-ns}u-sizeFitAlt {
   display: block;
   float: left;
   width: auto !important;
 }
 
-.u-sizeFitAlt {
+.#{$bits-ns}u-sizeFitAlt {
   float: right;
 }
 
@@ -25,7 +37,7 @@
  * N.B. This will hide overflow.
  */
 
-.u-sizeFill {
+.#{$bits-ns}u-sizeFill {
   display: block;
   overflow: hidden;
   width: auto !important;
@@ -37,7 +49,7 @@
  * In Chrome, Safari, and Firefox it results in undesired layout.
  */
 
-.u-sizeFillAlt {
+.#{$bits-ns}u-sizeFillAlt {
   display: table-cell;
   max-width: 100%;
   width: 10000px;
@@ -47,9 +59,9 @@
  * Make an element the width of its parent.
  */
 
-.u-sizeFull {
+.#{$bits-ns}u-sizeFull {
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+       box-sizing: border-box;
   display: block;
   width: 100%;
 }
@@ -58,119 +70,37 @@
    ========================================================================== */
 
 /**
- * Specify the proportional width of an object.
+ * Specifies the proportional width of an object
+ *
  * Intentional redundancy build into each set of unit classes.
- * Supports: 2, 4, 5, 6, 8, 10, 12 part
+ *
+ * ---------------
+ * Example output:
+ *
+ * .bits-u-size1of2 {
+ *   width: 50%;
+ * }
+ *
+ * .bits-u-size1of3 {     |    .bits-u-size2of3 {
+ *   width: 33.33333%;    |      width: 66.66667%;
+ * }                      |    }
+ *
+ * .bits-u-size1of4 {     |    .bits-u-size2of4 {     |    .bits-u-size3of4 {
+ *   width: 25%;          |      width: 50%;          |      width: 75%;
+ * }                      |    }                      |    }
+ *
+ * ...
+ *
+ * .bits-u-size1of12 {   ...   .bits-u-size7of12 {   ...   .bits-u-size11of12 {
+ *   width: 8.33333%;    ...     width: 58.33333%;   ...     width: 91.66667%;
+ * }                     ...   }                     ...   }
+ *
  */
 
-.u-size1of12 {
-  width: 8.333%;
-}
-
-.u-size1of10 {
-  width: 10%;
-}
-
-.u-size1of8 {
-  width: 12.5%;
-}
-
-.u-size1of6,
-.u-size2of12 {
-  width: 16.667%;
-}
-
-.u-size1of5,
-.u-size2of10 {
-  width: 20%;
-}
-
-.u-size1of4,
-.u-size2of8,
-.u-size3of12 {
-  width: 25%;
-}
-
-.u-size3of10 {
-  width: 30%;
-}
-
-.u-size1of3,
-.u-size2of6,
-.u-size3of9,
-.u-size4of12 {
-  width: 33.333%;
-}
-
-.u-size3of8 {
-  width: 37.5%;
-}
-
-.u-size2of5,
-.u-size4of10 {
-  width: 40%;
-}
-
-.u-size5of12 {
-  width: 41.667%;
-}
-
-.u-size1of2,
-.u-size2of4,
-.u-size3of6,
-.u-size4of8,
-.u-size5of10,
-.u-size6of12 {
-  width: 50%;
-}
-
-.u-size7of12 {
-  width: 58.333%;
-}
-
-.u-size3of5,
-.u-size6of10 {
-  width: 60%;
-}
-
-.u-size5of8 {
-  width: 62.5%;
-}
-
-.u-size2of3,
-.u-size4of6,
-.u-size8of12 {
-  width: 66.667%;
-}
-
-.u-size7of10 {
-  width: 70%;
-}
-
-.u-size3of4,
-.u-size6of8,
-.u-size9of12 {
-  width: 75%;
-}
-
-.u-size4of5,
-.u-size8of10 {
-  width: 80%;
-}
-
-.u-size5of6,
-.u-size10of12 {
-  width: 83.333%;
-}
-
-.u-size7of8 {
-  width: 87.5%;
-}
-
-.u-size9of10 {
-  width: 90%;
-}
-
-.u-size11of12 {
-  width: 91.667%;
+@each $columns in $bits-columns {
+  @for $position from 1 through $columns - 1 {
+    .#{$bits-ns}u-size#{$position}of#{$columns} {
+      width: (100 / ($columns / $position)) + unquote("%");
+    }
+  }
 }
