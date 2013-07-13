@@ -1,5 +1,7 @@
 === HEAD
 
+* Rename `bits-columns` var to `bits-dimension-columns`
+
 === 0.2.0 (July 13, 2013)
 
 * Finish the README file

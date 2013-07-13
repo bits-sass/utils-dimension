@@ -12,7 +12,7 @@
  */
 
 $bits-ns: 'bits-' !default; /* 1 */
-$bits-columns: (2 3 4 5 6 8 10 12) !default; /* 2 */
+$bits-dimension-columns: (2 3 4 5 6 8 10 12) !default; /* 2 */
 
 /* Intrinsic widths
    ========================================================================== */
@@ -97,7 +97,7 @@ $bits-columns: (2 3 4 5 6 8 10 12) !default; /* 2 */
  *
  */
 
-@each $columns in $bits-columns {
+@each $columns in $bits-dimension-columns {
   @for $position from 1 through $columns - 1 {
     .#{$bits-ns}u-size#{$position}of#{$columns} {
       width: (100 / ($columns / $position)) + unquote("%");

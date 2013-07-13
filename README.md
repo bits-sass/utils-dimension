@@ -13,7 +13,7 @@ Read more about [Bits.css toolkit](https://github.com/bits-css/bits.css).
 ## Available SASS variables
 
 * `bits-ns` - namespace of bits.css's classes
-* `bits-columns` - list of column variations, used by `u-sizeXofY`
+* `bits-dimension-columns` - list of column variations, used by `u-sizeXofY`
 
 ## Available utility classes
 
