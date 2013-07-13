@@ -94,7 +94,6 @@ $bits-dimension-columns: (2 3 4 5 6 8 10 12) !default; /* 2 */
  * .bits-u-size1of12 {   ...   .bits-u-size7of12 {   ...   .bits-u-size11of12 {
  *   width: 8.33333%;    ...     width: 58.33333%;   ...     width: 91.66667%;
  * }                     ...   }                     ...   }
- *
  */
 
 @each $columns in $bits-dimension-columns {
