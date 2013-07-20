@@ -1,5 +1,9 @@
 === HEAD
 
+=== 0.4.2 (July 20, 2013)
+
+* Rename organization's name to 'Bits.sass'
+
 === 0.4.1 (July 15, 2013)
 
 * Use percentage fn

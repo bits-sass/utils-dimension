@@ -1,14 +1,14 @@
-# Bits.scss utilities: dimension
+# Bits.sass utilities: dimension
 
-Utility classes for dimension-related CSS. See [other utilities](https://github.com/bits-scss/utils).
+Utility classes for dimension-related CSS. See [other utilities](https://github.com/bits-sass/utils).
 
-Read more about [Bits.scss toolkit](https://github.com/bits-scss/bits.scss).
+Read more about [Bits.sass toolkit](https://github.com/bits-sass/bits.sass).
 
 ## Installation
 
-* __Bower:__ `bower install --save bits-scss-utils-dimension`
-* __Download:__ [zip](https://github.com/bits-scss/utils-dimension/zipball/master), [tar.gz](https://github.com/bits-scss/utils-dimension/tarball/master)
-* __Git:__ `git clone https://github.com/bits-scss/utils-dimension.git`
+* __Bower:__ `bower install --save bits-sass-utils-dimension`
+* __Download:__ [zip](https://github.com/bits-sass/utils-dimension/zipball/master), [tar.gz](https://github.com/bits-sass/utils-dimension/tarball/master)
+* __Git:__ `git clone https://github.com/bits-sass/utils-dimension.git`
 
 ## Available SASS variables
 
