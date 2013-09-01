@@ -1,6 +1,8 @@
 === HEAD
 
 * Optimize rules generator
+* Add `!important` to all rules
+
 === 0.5.0 (August 25, 2013)
 
 * Add !important to `u-sizeXofY`
