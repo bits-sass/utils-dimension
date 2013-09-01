@@ -96,10 +96,50 @@ $bits-dimension-columns: (2 3 4 5 6 8 10 12) !default; /* 2 */
  * }                     ...   }                     ...   }
  */
 
+
+
+/* Utilities generator
+   ========================================================================== */
+
+$bits-dimension-values-unique: ();
+
+/**
+ * Collect unique values
+ */
+
 @each $columns in $bits-dimension-columns {
   @for $position from 1 through $columns - 1 {
-    .#{$bits-utils-ns}u-size#{$position}of#{$columns} {
-      width: percentage(1 / ($columns / $position)) !important;
+    $value: percentage(1 / ($columns / $position));
+
+    @if not index($bits-dimension-values-unique, $value) {
+      $bits-dimension-values-unique: append(
+          $bits-dimension-values-unique,
+          $value
+      )
+    }
+  }
+}
+
+/**
+ * Generate `u-sizeXofY` utils
+ */
+
+@each $value in $bits-dimension-values-unique {
+  $selectors: ();
+
+  @each $columns in $bits-dimension-columns {
+    @for $position from 1 through $columns - 1 {
+      $innerValue: percentage(1 / ($columns / $position));
+
+      @if $innerValue == $value {
+        $selectors: $selectors, unquote(".#{$bits-utils-ns}u-size#{$position}of#{$columns}");
+      }
+    }
+  }
+
+  @if length($selectors) > 0 {
+    #{$selectors} {
+      width: $value !important;
     }
   }
 }
