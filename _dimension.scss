@@ -74,26 +74,18 @@ $bits-dimension-columns: (2 3 4 5 6 8 10 12) !default; /* 2 */
  *
  * Intentional redundancy build into each set of unit classes.
  *
- * ---------------
- * Example output:
+ * --------------
+ * Example usage:
+ * --------------
  *
- * .bits-u-size1of2 {
- *   width: 50%;
- * }
- *
- * .bits-u-size1of3 {     |    .bits-u-size2of3 {
- *   width: 33.33333%;    |      width: 66.66667%;
- * }                      |    }
- *
- * .bits-u-size1of4 {     |    .bits-u-size2of4 {     |    .bits-u-size3of4 {
- *   width: 25%;          |      width: 50%;          |      width: 75%;
- * }                      |    }                      |    }
- *
- * ...
- *
- * .bits-u-size1of12 {   ...   .bits-u-size7of12 {   ...   .bits-u-size11of12 {
- *   width: 8.33333%;    ...     width: 58.33333%;   ...     width: 91.66667%;
- * }                     ...   }                     ...   }
+ * <div class="Module">
+ *   <div class="u-size2of5">
+ *     ...
+ *   </div>
+ *   <div class="u-size3of5">
+ *     ...
+ *   </div>
+ * </div>
  */
 
 
