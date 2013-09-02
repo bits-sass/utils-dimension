@@ -2,6 +2,7 @@
 
 * Optimize rules generator
 * Add `!important` to all rules
+* Use new style for comments
 
 === 0.5.0 (August 25, 2013)
 
