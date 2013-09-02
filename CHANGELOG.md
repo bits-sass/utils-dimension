@@ -1,5 +1,7 @@
 === HEAD
 
+=== 0.6.0 (September 2, 2013)
+
 * Optimize rules generator
 * Add `!important` to all rules
 * Use new style for comments
